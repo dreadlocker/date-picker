@@ -1,0 +1,25 @@
+@import '../../assets//styles//colors.scss';
+
+.date-picker-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px 24px;
+}
+.date-picker-footer-cancel-btn, .date-picker-footer-apply-btn {
+  width: 76px;
+  height: 32px;
+  font-family: 'Avenir-medium';
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.date-picker-footer-cancel-btn {
+  border: 1px solid $silver;
+  background-color: white;
+  color: $masala;
+}
+.date-picker-footer-apply-btn {
+  border: 1px solid $stTroaz;
+  background-color: $stTroaz;
+  color: white;
+}

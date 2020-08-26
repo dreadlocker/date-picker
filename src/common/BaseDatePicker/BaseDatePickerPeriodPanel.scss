@@ -1,0 +1,14 @@
+@import '../../assets//styles//colors.scss';
+
+.date-picker-period {
+    width: 142px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding: 8px 11px;
+    border-right: 1px solid $whiteSmoke;
+    cursor: pointer;
+  }
+  .active-period {
+    background-color: $whiteSmoke;
+  }

@@ -1,0 +1,24 @@
+@import '../assets//styles/colors.scss';
+
+.date-picker-btn {
+  // width: 132px; // by design
+  width: 140px; // bigger dimensions to fit all texts
+  height: 32px;
+  border: 1px solid $mercury;
+  border-radius: 4px;
+  padding: 4px 8px 4px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  cursor: pointer;
+}
+.date-picker-btn-text {
+  font-family: 'Avenir-roman';
+  font-size: 14px;
+  line-height: 18px;
+  color: $masala;
+}
+.header {
+  padding: 24px 0 16px 0;
+}

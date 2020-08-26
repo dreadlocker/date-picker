@@ -1,0 +1,224 @@
+@import '../../assets//styles//colors.scss';
+
+$padding-x: 24px;
+$day-holder-dimensions: 32px;
+$datepicker-width: 567px;
+$datepicker-height: 283px;
+
+.modal-mask {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $masala !important;
+  opacity: 0;
+  z-index: 30;
+  visibility: hidden;
+
+  &.show {
+    opacity: 0.6;
+    visibility: visible;
+  }
+
+  transition: all 0.3s ease-in-out;
+}
+
+.date-picker-modal-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+  opacity: 0;
+  z-index: 30;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  transition: all 0.3s ease-in-out;
+}
+
+.date-picker-holder {
+  width: 816px;
+  position: absolute;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.date-picker-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px 0 $padding-x;
+}
+
+.react-google-flight-datepicker {
+  width: $datepicker-width !important;
+  height: $datepicker-height !important;
+
+  .dialog-header,
+  .date-picker-input,
+  .dialog-footer {
+    display: none;
+  }
+
+  .dialog-date-picker {
+    width: $datepicker-width !important;
+    overflow: hidden;
+    position: unset !important;
+    box-shadow: none;
+    margin-bottom: 0 !important;
+    opacity: 1;
+    transform: none;
+
+    &.open {
+      animation-duration: 0s !important;
+    }
+
+    &.hide {
+      animation: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+
+    .calendar-wrapper {
+      margin: 0;
+      min-height: $datepicker-height;
+
+      .flipper-button {
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+
+        position: relative;
+        box-shadow: none;
+        background-color: transparent;
+        bottom: 134px;
+
+        &:first-child {
+          left: 20px;
+        }
+
+        &:last-child {
+          right: 12px;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .month-calendar {
+      margin-right: 25px;
+    }
+  }
+
+  .weekday,
+  .day {
+    width: 39px !important;
+    outline: none
+  }
+
+  .weekday {
+    font-size: 12px;
+    line-height: 16px;
+    font-family: 'Avenir-roman';
+    color: $masala;
+  }
+
+  .text-day {
+    color: $earlBlack;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: 'Avenir-medium';
+  }
+
+  .first>.day {
+
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      .text-day {
+        color: $masala;
+      }
+    }
+  }
+
+  .week>.day:nth-child(n + 6) {
+    .text-day {
+      color: $masala;
+    }
+  }
+
+  .day {
+    width: $day-holder-dimensions;
+    height: $day-holder-dimensions;
+
+    &:after {
+      width: $day-holder-dimensions;
+      height: $day-holder-dimensions;
+    }
+
+    &:hover {
+      &:after {
+        border: 2px solid $stTroaz;
+      }
+    }
+
+    &.selected {
+      .text-day {
+        color: white !important;
+      }
+
+      &:after {
+        background-color: $stTroaz !important;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.3;
+    }
+  }
+
+  .dialog-content {
+    border: none;
+  }
+
+  .month-name {
+    font-size: 12px;
+    color: $earlBlack;
+    text-transform: uppercase;
+    font-family: 'Avenir-medium';
+  }
+
+  .date-picker {
+    padding: 0 !important;
+  }
+
+  // Remove animation of calendar months changing because of a glitch
+  // Animation is done with JS because of 2 different types of animations(animations direction)
+  .calendar-content.isAnimating {
+    transform: translateX(0px) !important;
+  }
+}
+
+.show-period-text {
+  width: $datepicker-width;
+  height: $datepicker-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.dummy {
+  height: $datepicker-height;
+}
